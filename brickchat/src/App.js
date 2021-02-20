@@ -15,7 +15,7 @@ const reducers = combineReducers({
 const configureStore = () =>
   createStore(reducers, applyMiddleware(thunkMidleware))
 
-const settings = require('secret.json');
+const settings = require('./secret.json');
 
 function App() {
   return (
