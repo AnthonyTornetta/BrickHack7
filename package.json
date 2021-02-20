@@ -2,6 +2,8 @@
   "dependencies": {
     "@voxeet/react-components": "^3.0.1",
     "@voxeet/react-redux-5.1.1": "5.1.1",
-    "@voxeet/voxeet-web-sdk": "^3.0.3"
+    "@voxeet/voxeet-web-sdk": "^3.0.3",
+    "dotenv": "^8.2.0",
+    "pusher": "^5.0.0"
   }
 }
