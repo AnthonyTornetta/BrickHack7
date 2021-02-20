@@ -39,7 +39,7 @@ class ChatRoom extends Component
       </VoxeetProvider>
       
       <Fragment>
-              <h3 style={{ textAlign: 'center' }}>Dos Paint</h3>
+              <h3 style={{ textAlign: 'center' }}>Brick Paint</h3>
               <div className="main">
                 <div className="color-guide">
                   <h5>Color Guide</h5>
