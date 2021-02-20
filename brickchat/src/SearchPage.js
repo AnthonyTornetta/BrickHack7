@@ -1,13 +1,22 @@
 import './App.css';
-import React from 'react';
+import React, { Component } from 'react';
 
-function SearchRoom() {
-  return (
-    <div className="SearchRoom">
-      <label for="search">Search Bar epico</label>
-      <input name="search"></input>
-    </div>
-  );
+class SearchRoom extends Component
+{
+  constructor(props)
+  {
+    super(props);
+  }
+
+  render()
+  {
+    return (
+      <div className="SearchRoom">
+        <label for="search">Search Bar epico</label>
+        <input name="search"></input>
+      </div>
+    );
+  }
 }
 
 export default SearchRoom;
