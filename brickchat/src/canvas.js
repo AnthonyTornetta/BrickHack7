@@ -90,6 +90,7 @@
         this.ctx.lineJoin = 'round';
         this.ctx.lineCap = 'round';
         this.ctx.lineWidth = 5;
+		
 		const channel = this.pusher.subscribe('painting');
         channel.bind('draw', (data) => {
           const { userId, line } = data;
