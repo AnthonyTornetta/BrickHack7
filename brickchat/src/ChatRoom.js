@@ -23,34 +23,41 @@ class ChatRoom extends Component
   constructor(props)
   {
     super(props);
+
+    this.chatComponent = (<ConferenceRoom
+        autoJoin
+        consumerKey={settings.consumerKey}
+        consumerSecret={settings.consumerSecret}
+        conferenceAlias={settings.conferenceAlias}
+      />);
   }
 
   render()
   {
     return (
       <div className="ChatRoom">
-      <VoxeetProvider store={configureStore()}>
-        <ConferenceRoom
-        autoJoin
-        consumerKey={settings.consumerKey}
-        consumerSecret={settings.consumerSecret}
-        conferenceAlias={settings.conferenceAlias}
-        />
-      </VoxeetProvider>
-      
-      <Fragment>
-              <h3 style={{ textAlign: 'center' }}>Dos Paint</h3>
-              <div className="main">
-                <div className="color-guide">
-                  <h5>Color Guide</h5>
-                  <div className="user user">User</div>
-                  <div className="user guest">Guest</div>
+        <VoxeetProvider store={configureStore()}>
+          {this.chatComponent}
+        </VoxeetProvider>
+
+        <Fragment>
+                <h3 style={{ textAlign: 'center' }}>Dos Paint</h3>
+                <div className="main">
+                  <div className="color-guide">
+                    <h5>Color Guide</h5>
+                    <div className="user user">User</div>
+                    <div className="user guest">Guest</div>
+                  </div>
+                  <Canvas />
                 </div>
-                <Canvas />
-              </div>
-        </Fragment>
+          </Fragment>
       </div>
     );
+  }
+
+  componentWillUnmount()
+  {
+    document.getElementById('leave-btn').click();
   }
 }
 
