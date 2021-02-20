@@ -57,7 +57,7 @@ class ChatRoom extends Component
 
   componentWillUnmount()
   {
-    document.getElementById('leave-btn').click();
+    //document.getElementById('leave-btn').click();
   }
 }
 
