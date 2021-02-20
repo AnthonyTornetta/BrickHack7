@@ -1,0 +1,13 @@
+TODO
+
+1) Server
+    Store Chat Rooms
+    Search for chat rooms based off their tags
+    Remove/Create rooms
+    Votekick someone from a chatroom
+    Connect to chatroom via URL (each chatroom gets their own url based off their title)
+
+2) UI
+    Search for chat rooms based off their tags
+    List top chat rooms/tags
+    Votekick someone
