@@ -9,8 +9,10 @@
     "@voxeet/react-components": "^3.0.1",
     "@voxeet/react-redux-5.1.1": "5.1.1",
     "@voxeet/voxeet-web-sdk": "^3.0.3",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-materialize": "^3.9.7",
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0"
   },
