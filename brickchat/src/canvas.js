@@ -10,8 +10,8 @@
         this.onMouseDown = this.onMouseDown.bind(this);
         this.onMouseMove = this.onMouseMove.bind(this);
         this.endPaintEvent = this.endPaintEvent.bind(this);
-		this.pusher = new Pusher('PUSHER_KEY', {
-          cluster: 'eu',
+		this.pusher = new Pusher('f4548037aebea2beda5e', {
+          cluster: 'us2',
         });
       }
 
