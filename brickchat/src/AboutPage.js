@@ -12,7 +12,9 @@ class AboutPage extends Component
   {
     return (
       <div className="AboutPage">
-        <h1>This is the not landing page!</h1>
+        <h1>About Us!</h1>
+        <br></br>
+        <h4>We exist to help out your mother!</h4>
       </div>
     );
   }
