@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-function ChatRoom() {
+function LandingPage() {
   return (
     <div className="LandingPage">
       <h1>This is the landing page!</h1>
@@ -9,4 +9,4 @@ function ChatRoom() {
   );
 }
 
-export default ChatRoom;
+export default LandingPage;
