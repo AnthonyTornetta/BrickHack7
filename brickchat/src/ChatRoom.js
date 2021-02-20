@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import { Component, Fragment } from 'react';
+import Canvas from './canvas';
 
 import { reducer as voxeetReducer } from "@voxeet/react-components";
 import thunkMidleware from "redux-thunk";
@@ -16,26 +18,40 @@ const configureStore = () =>
 
 const settings = require('./secret.json');
 
-function ChatRoom() {
-  return (
-    <div className="ChatRoom">
+class ChatRoom extends Component
+{
+  constructor(props)
+  {
+    super(props);
+  }
+
+  render()
+  {
+    return (
+      <div className="ChatRoom">
       <VoxeetProvider store={configureStore()}>
         <ConferenceRoom
         autoJoin
-        displayActions={["mute", "screenshare", "video", "chat", "attendies"]}
-        liveRecordingEnabled={false}
         consumerKey={settings.consumerKey}
         consumerSecret={settings.consumerSecret}
-        conferenceAlias={'ROOM CONFERENCE - CHANGE BASED ON TITLE'}
+        conferenceAlias={settings.conferenceAlias}
         />
       </VoxeetProvider>
-		
-      <div className="ChatRoomMain">
-        
+      
+      <Fragment>
+              <h3 style={{ textAlign: 'center' }}>Brick Paint</h3>
+              <div className="main">
+                <div className="color-guide">
+                  <h5>Color Guide</h5>
+                  <div className="user user">User</div>
+                  <div className="user guest">Guest</div>
+                </div>
+                <Canvas />
+              </div>
+        </Fragment>
       </div>
-    </div>
-
-  );
+    );
+  }
 }
 
 export default ChatRoom;

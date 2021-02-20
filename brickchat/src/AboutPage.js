@@ -1,12 +1,21 @@
 import './App.css';
-import React from 'react';
+import React, { Component } from 'react';
 
-function AboutPage() {
-  return (
-    <div className="AboutPage">
-      <h1>This is the not landing page!</h1>
-    </div>
-  );
+class AboutPage extends Component
+{
+  constructor(props)
+  {
+    super(props);
+  }
+
+  render()
+  {
+    return (
+      <div className="AboutPage">
+        <h1>This is the not landing page!</h1>
+      </div>
+    );
+  }
 }
 
 export default AboutPage;
