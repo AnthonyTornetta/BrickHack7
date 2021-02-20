@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import { Component, Fragment } from 'react';
+import Canvas from './canvas';
 
 import { reducer as voxeetReducer } from "@voxeet/react-components"
 import thunkMidleware from "redux-thunk"
@@ -29,22 +31,18 @@ function App() {
 			/>
 		</VoxeetProvider>
 		
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+	  <Fragment>
+            <h3 style={{ textAlign: 'center' }}>Dos Paint</h3>
+            <div className="main">
+              <div className="color-guide">
+                <h5>Color Guide</h5>
+                <div className="user user">User</div>
+                <div className="user guest">Guest</div>
+              </div>
+              <Canvas />
+            </div>
+      </Fragment>
     </div>
-
   );
 }
 
