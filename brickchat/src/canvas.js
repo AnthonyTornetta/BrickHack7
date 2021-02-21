@@ -4,13 +4,14 @@
     import { v4 } from 'uuid';
 	import Pusher from 'pusher-js';
 
+
     class Canvas extends Component {
       constructor(props) {
         super(props);
         this.onMouseDown = this.onMouseDown.bind(this);
         this.onMouseMove = this.onMouseMove.bind(this);
         this.endPaintEvent = this.endPaintEvent.bind(this);
-		this.pusher = new Pusher('f4548037aebea2beda5e', {
+		this.pusher = new Pusher('9db5aa5f56be39d0fdde', {
           cluster: 'us2',
         });
       }
@@ -47,6 +48,7 @@
       endPaintEvent() {
         if (this.isPainting) {
           this.isPainting = false;
+
           this.sendPaintData();
         }
       }
@@ -93,7 +95,9 @@
 		
 		const channel = this.pusher.subscribe('painting');
         channel.bind('draw', (data) => {
+
           const { userId, line } = data;
+
           if (userId !== this.userId) {
             line.forEach((position) => {
               this.paint(position.start, position.stop, this.guestStrokeStyle);
