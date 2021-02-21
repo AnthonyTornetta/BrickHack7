@@ -24,15 +24,6 @@ class ChatRoom extends Component
   {
     super(props);
 
-    this.chatComponent = (<ConferenceRoom
-        autoJoin
-        displayActions={["mute", "video", "screenshare"]}
-        liveRecordingEnabled={false}
-        consumerKey={settings.consumerKey}
-        consumerSecret={settings.consumerSecret}
-        conferenceAlias={settings.conferenceAlias}
-      />);
-
     this.componentCleanup = this.componentCleanup.bind(this);
     window.addEventListener('beforeunload', this.componentCleanup);
   }
@@ -54,7 +45,6 @@ class ChatRoom extends Component
 
   componentCleanup()
   {
-    console.log('a2');
     fetch('http://127.0.0.1:8080/leave', 
     {
       method: 'POST',
@@ -63,6 +53,9 @@ class ChatRoom extends Component
       {
         'Content-Type': 'application/json'
       }
+    }).then(res =>
+    {
+      window.location = '/';
     });
   }
 
@@ -77,7 +70,18 @@ class ChatRoom extends Component
     return (
       <div className="ChatRoom">
         <VoxeetProvider store={configureStore()}>
-          {this.chatComponent}
+          <ConferenceRoom
+            autoJoin
+            handleOnLeave={() => 
+            {
+                this.componentCleanup();
+            }}
+            displayActions={["mute", "video", "screenshare"]}
+            liveRecordingEnabled={false}
+            consumerKey={settings.consumerKey}
+            consumerSecret={settings.consumerSecret}
+            conferenceAlias={`settings.conferenceAlias-${this.props.name}`}
+          />
         </VoxeetProvider>
 
         <Fragment>
