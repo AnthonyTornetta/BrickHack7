@@ -72,7 +72,7 @@ body
 {
   position: absolute;
   margin: 0 auto;
-  top: 33%;
+  top: 50%;
   left: Calc(50% - 15vw);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
