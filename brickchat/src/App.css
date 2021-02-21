@@ -102,6 +102,12 @@ body
 
 body {
 	font-family: 'Roboto Condensed', serif;
+  background-image: url("brickbackground.jpg");
+  background-position: right;
+  background-image: url("brickbackground.jpg");
+  background-position: left;
+  background-size: 100px;
+  background-repeat: repeat-y;
 }
 .main {
     display: flex;
