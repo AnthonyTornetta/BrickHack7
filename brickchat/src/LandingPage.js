@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import 'materialize-css';
 import { Button, Card, Row, Col } from 'react-materialize';
 
+import SearchPage from './SearchPage';
+
 class LandingPage extends Component
 {
   constructor(props)
@@ -15,7 +17,14 @@ class LandingPage extends Component
   {
     return (
       <div className="LandingPage">
-        <h1>This is the landing page!</h1>
+        <h1>RIT Chatrooms</h1>
+        
+        <button onClick={() =>
+          {
+            this.props.main.changePage( (<SearchPage />) );
+          }}>
+            Search Chatrooms
+          </button>
       </div>
     );
   }
