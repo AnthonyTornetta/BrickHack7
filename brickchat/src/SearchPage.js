@@ -12,8 +12,10 @@ class SearchRoom extends Component
   {
     return (
       <div className="SearchRoom">
-        <label for="search">Search Bar epico</label>
-        <input name="search"></input>
+        <div id="searchBar">
+          <input name="search" placeholder="search for a room..."></input>
+          <button>Search</button>
+        </div>
       </div>
     );
   }

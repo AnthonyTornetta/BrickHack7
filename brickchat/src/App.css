@@ -1,7 +1,25 @@
+/*
+FONTS:
+
+PT Serif
+Noto Sans TC
+
+Colors:
+
+Rit orange - #F76902
+white
+black
+light grey - #D0D3D4
+mid grey - #A2AAAD
+dark grey - #7C878E
+*/
+
+/*=========================================================================================*/
 *
 {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans TC';
 }
 
 html
@@ -18,6 +36,7 @@ body
   display: flex;
 }
 
+/*=========================================================================================*/
 .HeaderBar ul
 {
   list-style-type: none;
@@ -37,6 +56,7 @@ body
   cursor: pointer;
 }
 
+/*=========================================================================================*/
 .ChatRoomMain
 {
   background-color: black;
@@ -45,6 +65,7 @@ body
   display: flex;
 }
 
+/*=========================================================================================*/
 .LandingPage
 {
   position: absolute;
@@ -76,6 +97,8 @@ body
   background-color: #F76902;
   color: black;
   font-size: 4vw;
+
+  border: 3px solid black;
 }
 
 .LandingPage button:hover
@@ -89,6 +112,7 @@ body
   background-color: #A2AAAD;
 }
 
+/*=========================================================================================*/
 .HeaderBar
 {
   width: 100vw;
@@ -97,6 +121,73 @@ body
 
   background: #F76902;
   color: black;
+}
+
+/*=========================================================================================*/
+.SearchRoom
+{
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: Calc(50% - 30vw);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.SearchRoom input
+{
+  width: 40vw;
+  height: calc(5vw + 50px);
+
+  font-size: 4vw;
+
+  background-color:#d0d3d444;
+}
+
+.SearchRoom button
+{
+  text-align: center;
+  vertical-align: middle;
+
+  width: 20vw;
+  height: Calc(5vw + 50px);
+
+  background-color: #F76902;
+  color: black;
+  font-size: 4vw;
+
+  border: 3px solid black;
+
+  margin-left: 20px;
+  margin-bottom: Calc(4vw - 13px);
+}
+
+.SearchRoom button:hover
+{
+  transition-duration: 0.3s;
+  background-color: #7C878E;
+}
+
+.SearchRoom button:active
+{
+  background-color: #A2AAAD;
+}
+
+/*=========================================================================================*/
+.AboutPage
+{
+  margin: 0 auto;
+  width: 65%;
+
+  line-height: 2.5;
+
+  background-color: #D0D3D4;
+  padding: 20px;
+}
+.AboutPage h1
+{
+  text-align: center;
+  border-bottom: 1px solid black;
 }
 
 
@@ -109,16 +200,6 @@ body {
 }
 .color-guide {
     margin: 20px 40px;
-}
-h1 {
-  text-align: center;
-  padding: 20px;
-}
-h4 {
-    padding: 50px 450px;
-}
-h5 {
-    margin-bottom: 10px;
 }
 .user {
     padding: 7px 15px;
