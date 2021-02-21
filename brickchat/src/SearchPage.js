@@ -13,8 +13,13 @@ class SearchRoom extends Component
     return (
       <div className="SearchRoom">
         <div id="searchBar">
-          <input name="search" placeholder="search for a room..."></input>
-          <button>Search</button>
+          <div>
+            <input name="search" placeholder="search for a room..."></input>
+            <button>Search</button>
+          </div>
+          <div>
+
+          </div>
         </div>
       </div>
     );
