@@ -19,15 +19,15 @@ class Canvas extends Component {
 
         this.isPainting = false;
         // Different stroke styles to be used for user and guest
-        this.userStrokeStyle = '#EE92C2';
-        this.guestStrokeStyle = '#F0C987';
+        this.userStrokeStyle = '#ffffff';
+        this.guestStrokeStyle = '#ffa500';
         this.line = [];
         // v4 creates a unique id for each user. We used this since there's no auth to tell users apart
         this.userId = `${v4()}-${props.chatname}`;
         this.prevPos = { offsetX: 0, offsetY: 0 };
       }
 
-      
+
 
       onMouseDown({ nativeEvent }) {
         const { offsetX, offsetY } = nativeEvent;
@@ -89,14 +89,14 @@ class Canvas extends Component {
       }
 
       componentDidMount() {
-        // Here we set up the properties of the canvas element. 
+        // Here we set up the properties of the canvas element.
         this.canvas.width = 1000;
         this.canvas.height = 800;
         this.ctx = this.canvas.getContext('2d');
         this.ctx.lineJoin = 'round';
         this.ctx.lineCap = 'round';
         this.ctx.lineWidth = 5;
-		
+
 		const channel = this.pusher.subscribe('painting');
         channel.bind('draw', (data) => {
 
@@ -118,7 +118,7 @@ class Canvas extends Component {
       render() {
         return (
           <canvas
-          // We use the ref attribute to get direct access to the canvas element. 
+          // We use the ref attribute to get direct access to the canvas element.
             ref={(ref) => (this.canvas = ref)}
             style={{ background: 'black' }}
             onMouseDown={this.onMouseDown}

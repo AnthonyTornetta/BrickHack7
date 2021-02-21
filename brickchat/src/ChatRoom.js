@@ -26,6 +26,8 @@ class ChatRoom extends Component
 
     this.chatComponent = (<ConferenceRoom
         autoJoin
+        displayActions={["mute", "video", "screenshare"]}
+        liveRecordingEnabled={false}
         consumerKey={settings.consumerKey}
         consumerSecret={settings.consumerSecret}
         conferenceAlias={settings.conferenceAlias}
