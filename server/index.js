@@ -3,6 +3,7 @@ const app = express();
 const port = 8080;
 const path = require('path');
 const bodyparser = require('body-parser');
+const fs = require('fs');
 
 app.use(bodyparser.json());
 app.use(bodyparser.raw());
@@ -30,9 +31,32 @@ class ChatRoom
 
 const rooms = [];
 
-rooms.push(new ChatRoom([new Tag('a'), new Tag('b')], 'Hi'));
+function saveRooms()
+{
+  fs.writeFile('rooms.json', JSON.stringify(rooms), () => {});
+}
 
-app.post('/makeroom/', (req, res, next) =>
+if(fs.existsSync('rooms.json'))
+{
+  let data = fs.readFileSync('rooms.json', 'utf8');
+  data = JSON.parse(data);
+
+  data.forEach(r =>
+  {
+    let tags = [];
+
+    r.tagList.forEach(t =>
+    {
+      tags.push(new Tag(t));
+    });
+    
+    rooms.push(new ChatRoom(tags, r.name));
+  });
+}
+else
+  saveRooms();
+
+app.post('/makeroom', (req, res, next) =>
 {
   if(req.body && req.body.tags && req.body.tags.length && req.body.name)
   {
@@ -52,11 +76,18 @@ app.post('/makeroom/', (req, res, next) =>
     if(!valid)
       return;
 
+    rooms.push(new ChatRoom(req.body.tags, req.body.name));
+    res.status(200).type('json').send('{ "success": "Room successfully created!" }');
     
+    saveRooms();
+  }
+  else
+  {
+    res.status(400).type('json').send('{ "error": "Room must have a name and at least one tag!" }');
   }
 });
 
-app.post('/tags/', (req, res, next) =>
+app.post('/tags', (req, res, next) =>
 {
   let goodRooms = [];
 
