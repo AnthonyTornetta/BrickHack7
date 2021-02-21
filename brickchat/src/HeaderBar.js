@@ -20,7 +20,7 @@ class HeaderBar extends Component
         <ul>
           <li onClick={() =>
           {
-            this.props.main.changePage( (<LandingPage />) );
+            this.props.main.changePage( (<LandingPage main={this.props.main} />) );
           }}>
             Home
           </li>
@@ -34,16 +34,16 @@ class HeaderBar extends Component
 
           <li onClick={() =>
           {
-            this.props.main.changePage( (<AboutPage />) );
+            this.props.main.changePage( (<ChatRoom />) );
           }}>
-            About
+            Chat
           </li>
 
           <li onClick={() =>
           {
-            this.props.main.changePage( (<ChatRoom />) );
+            this.props.main.changePage( (<AboutPage />) );
           }}>
-            Chat
+            About
           </li>
         </ul>
       </div>

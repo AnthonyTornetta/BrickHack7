@@ -8,7 +8,7 @@ html
 {
   min-height: 100%;
   width: 100%;
-  
+
   display: flex;
 }
 
@@ -33,7 +33,7 @@ body
 
 .HeaderBar ul li:hover
 {
-  background-color: #555;
+  background-color: #7C878E;
   cursor: pointer;
 }
 
@@ -47,7 +47,46 @@ body
 
 .LandingPage
 {
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: Calc(50% - 20vw);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
+.LandingPage h1
+{
+  text-align: center;
+  font-size: 5vw;
+
+  padding-bottom: 20px;
+}
+
+.LandingPage button
+{
+  margin: 0 auto;
+
+  text-align: center;
+  vertical-align: middle;
+
+  width: 40vw;
+  height: Calc(5vw + 50px);
+
+  background-color: #F76902;
+  color: black;
+  font-size: 4vw;
+}
+
+.LandingPage button:hover
+{
+  transition-duration: 0.3s;
+  background-color: #7C878E;
+}
+
+.LandingPage button:active
+{
+  background-color: #A2AAAD;
 }
 
 .HeaderBar
@@ -56,8 +95,8 @@ body
   top: 0;
   left: 0;
 
-  background: #333;
-  color: white;
+  background: #F76902;
+  color: black;
 }
 
 
@@ -70,6 +109,13 @@ body {
 }
 .color-guide {
     margin: 20px 40px;
+}
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+h4 {
+    padding: 50px 450px;
 }
 h5 {
     margin-bottom: 10px;

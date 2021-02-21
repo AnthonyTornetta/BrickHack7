@@ -15,15 +15,8 @@ app.listen(port, () =>
 
 class Tag
 {
-  constructor(name)
-  {
-    this.name = name;
-  }
-
-  isSimilar(s)
-  {
-    return this.name.includes(s);
-  }
+  constructor(name){this.name = name;}
+  isSimilar(s){return this.name.includes(s);}
 }
 
 class ChatRoom

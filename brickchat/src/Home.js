@@ -11,7 +11,7 @@ class App extends Component
         super(props);
 
         this.state = {
-            currentPage: (<LandingPage />) 
+            currentPage: (<LandingPage main={this}/>) 
         };
     }
 
