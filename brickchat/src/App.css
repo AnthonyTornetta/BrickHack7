@@ -102,8 +102,10 @@ body
 
 body {
 	font-family: 'Roboto Condensed', serif;
-  background-size: 100px;
+  background:url("brickbackground.jpg") left repeat-y,url("brickbackground.jpg") right repeat-y;
+  background-size: 150px;
   background-repeat: repeat-y;
+  background-color: #d3d3d3;
 }
 .main {
     display: flex;
