@@ -1,0 +1,6 @@
+// .env
+
+    // Replace the placeholder values with your actual pusher credentials
+    PUSHER_APP_ID=1159443
+    PUSHER_KEY=f4548037aebea2beda5e
+    PUSHER_SECRET=d0d81e3376100ce04dd6
