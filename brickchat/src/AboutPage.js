@@ -12,9 +12,22 @@ class AboutPage extends Component
   {
     return (
       <div className="AboutPage">
-        <h1>About Us!</h1>
+        <h1>About Brick Chat</h1>
         <br></br>
-        <h4>As the developers of this platform, we strive to have people unite together and be able to connect through a variety of means.  With the pandemic limiting in-person interactions, we want the best possible scenarios of communication and social life from our peers.  BrickChat was created to set a platform between students, having public chat rooms for different topics and subjects, so that anyone can talk about any topic they need with.  Whether it is to seek help via tutoring, or it is to have a chat for a certain game, BrickChat is here to help people connect from afar.</h4>
+        <h4>
+			Right now, it is harder than ever to meet with people 
+			and make new friends. For many people in college, the 
+			lack of social interaction is a sad bit of irony considering
+			that so many of us are surrounded by thousands of people with 
+			similar interests. All that considered, our goal is to provide 
+			a platform that allows for easy communication between people with 
+			similar interests. We believe that giving college students 
+			a catalyst to ease the difficulty of making friends during the pandemic 
+			will result in a happier, more connected student body. We hope 
+			you enjoy using Brick Chat to connect in a way that 
+			is more personal and targeted than anything else that is 
+			currently available.
+		</h4>
       </div>
     );
   }
