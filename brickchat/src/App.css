@@ -71,11 +71,15 @@ body {
 .color-guide {
     margin: 20px 40px;
 }
-h5 {
-    margin-bottom: 10px;
+h1 {
+  text-align: center;
+  padding: 20px;
 }
 h4 {
     padding: 50px 450px;
+}
+h5 {
+    margin-bottom: 10px;
 }
 .user {
     padding: 7px 15px;
