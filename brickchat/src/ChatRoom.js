@@ -45,8 +45,8 @@ class ChatRoom extends Component
                 <div className="main">
                   <div className="color-guide">
                     <h5>Color Guide</h5>
-                    <div className="user user">User</div>
-                    <div className="user guest">Guest</div>
+                    <div className="user user">You</div>
+                    <div className="user guest">Others</div>
                   </div>
                   <Canvas />
                 </div>
