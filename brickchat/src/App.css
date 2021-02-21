@@ -8,7 +8,7 @@ html
 {
   min-height: 100%;
   width: 100%;
-  
+
   display: flex;
 }
 
@@ -109,6 +109,13 @@ body {
 }
 .color-guide {
     margin: 20px 40px;
+}
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+h4 {
+    padding: 50px 450px;
 }
 h5 {
     margin-bottom: 10px;
