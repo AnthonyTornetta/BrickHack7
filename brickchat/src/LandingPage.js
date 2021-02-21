@@ -18,14 +18,14 @@ class LandingPage extends Component
   {
     return (
       <div className="LandingPage">
-        <h1>RIT Brick Chat</h1>
-        
+        <h1>RIT BrickChat</h1>
+        <h2>Roar With Your Tigers!</h2>
         <button onClick={() =>
           {
             this.props.main.changePage( (<SearchPage />) );
           }}>
             Search Chatrooms
-          </button>
+        </button>
       </div>
     );
   }

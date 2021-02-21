@@ -1,4 +1,6 @@
  // canvas.js
+ // the canvas class was copied from the following introductory tutorial
+ // and then modified slightly for our use: https://pusher.com/tutorials/live-paint-react
 
     import React, { Component } from 'react';
     import { v4 } from 'uuid';
