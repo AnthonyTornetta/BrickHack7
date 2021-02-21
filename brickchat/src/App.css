@@ -1,14 +1,10 @@
 /*
 FONTS:
-
 Noto Sans TC
 PT Serif
 
 COLORS:
-
-black
-white
-rit orange - #F76902
+RIT orange - #F76902
 light grey - #D0D3D4
 mid grey - #A2AAAD
 dark grey -#7C878E
@@ -38,49 +34,20 @@ body
   display: flex;
 }
 
+button
+{
+  cursor: pointer;
+}
+
 /*======================================================*/
-.Left
+.HeaderBar
 {
-  flex: 1;
-  justify-self: flex-start;
-}
+  width: 100vw;
+  top: 0;
+  left: 0;
 
-.Right
-{
-  flex: 1;
-  justify-self: flex-end;
-}
-
-.TagList
-{
-  list-style-type: none;
-}
-
-.TagList .Tag
-{
-  display: inline-block;
-  padding: 8px 6px;
-  outline: orange  thin solid;
-
-  margin: 4px;
-
-  text-align: center;
-  min-width: 70px;
-  cursor: pointer;
-}
-
-.GroupList
-{
-  list-style-type: none;
-}
-
-.GroupList .Group
-{
-  display: block;
-  padding: 16px 12px;
-  margin-bottom: 4px;
-
-  cursor: pointer;
+  background: #F76902;
+  color: black;
 }
 
 .HeaderBar ul
@@ -154,11 +121,6 @@ body
   border: 3px solid black;
 }
 
-button
-{
-  cursor: pointer;
-}
-
 .LandingPage button:hover
 {
   transition-duration: 0.3s;
@@ -172,21 +134,19 @@ button
 }
 
 /*======================================================*/
-.HeaderBar
-{
-  width: 100vw;
-  top: 0;
-  left: 0;
-
-  background: #F76902;
-  color: black;
-}
-
-/*======================================================*/
 .SearchRoom
 {
   margin: 0 auto;
   width: 80%;
+}
+
+.SearchRoom h2, .SearchRoom .TagList button
+{
+  margin-left: 3vw;
+}
+#groups
+{
+  margin: 0;
 }
 
 .SearchRoom input
@@ -204,6 +164,7 @@ button
   height: 50px;
   text-align: center;
   border: none;
+  padding: 0px 10px;
 }
 .SearchRoom button:hover
 {
@@ -215,6 +176,7 @@ button
   background-color: #A2AAAD;
 }
 
+/*===============SEARCH ROOM EXTRA CLASSES===============*/
 .Tag
 {
   transition: background-color 0.3s;
@@ -238,12 +200,57 @@ button
   background-color: #F76902;
 }
 
+.Left
+{
+  flex: 1;
+  justify-self: flex-start;
+}
+
+.Right
+{
+  flex: 1;
+  justify-self: flex-end;
+}
+
+.TagList
+{
+  list-style-type: none;
+}
+
+.TagList .Tag
+{
+  display: inline-block;
+  padding: 8px 6px;
+  outline: orange thin solid;
+
+  margin: 4px;
+
+  text-align: center;
+  min-width: 70px;
+  cursor: pointer;
+}
+
+.GroupList
+{
+  list-style-type: none;
+}
+
+.GroupList .Group
+{
+  display: block;
+  padding: 16px 12px;
+  margin-bottom: 4px;
+
+  cursor: pointer;
+}
+
 /*======================================================*/
 .AboutPage
 {
   margin: 0 auto;
   width: 70%;
   line-height: 2;
+
 }
 .AboutPage h1
 {
@@ -285,7 +292,7 @@ h5 {
     outline: black solid thin;
 }
 
-
+/*======================================================*/
 /*FOR SMALL DISPLAY*/
 @media only screen and (max-width: 1400px)
 {
@@ -316,10 +323,9 @@ h5 {
 
   font-size: 40px;
 }
-}
 
-/*FOR Teensy tiny DISPLAY*/
-@media only screen and (max-width: 450px)
+.SearchRoom h2, .SearchRoom .TagList button
 {
-  /*If we have time*/
+  margin-left: 0px;
+}
 }

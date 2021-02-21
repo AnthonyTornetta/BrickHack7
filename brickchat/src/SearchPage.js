@@ -157,7 +157,7 @@ class SearchRoom extends Component
               </ul>
             </div>
             <div className="Right">
-              <h2>Applicable Groups</h2>
+              <h2 id="groups">Applicable Groups</h2>
               <ul className="GroupList">
                 {
                   this.state.groups.length ?
