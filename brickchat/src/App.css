@@ -27,6 +27,9 @@ html
   width: 100%;
 
   display: flex;
+  background:url("brickbackground.jpg") left repeat-y,url("brickbackground.jpg") right repeat-y;
+  background-size: 150px;
+  background-repeat: repeat-y;
 }
 
 body
@@ -156,11 +159,21 @@ body
 }
 
 /*======================================================*/
+.AboutPage
+{
+  margin: 0 auto;
+  width: 70%;
+  line-height: 2;
+}
+.AboutPage h1
+{
+  text-align: center;
+  padding: 20px;
+}
+
+/*======================================================*/
 body {
 	font-family: 'Roboto Condensed', serif;
-  background:url("brickbackground.jpg") left repeat-y,url("brickbackground.jpg") right repeat-y;
-  background-size: 150px;
-  background-repeat: repeat-y;
 }
 .main {
     display: flex;
@@ -168,13 +181,6 @@ body {
 }
 .color-guide {
     margin: 20px 40px;
-}
-h1 {
-  text-align: center;
-  padding: 20px;
-}
-h4 {
-    padding: 50px 450px;
 }
 h5 {
     margin-bottom: 10px;
