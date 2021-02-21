@@ -198,3 +198,13 @@ h5 {
     background: #F0C987;
     color: white;
 }
+
+
+/*FOR SMALL DISPLAY*/
+@media only screen and (max-width: 1400px)
+{
+  html
+  {
+    background-image: none;
+  }
+}
