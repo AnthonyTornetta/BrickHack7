@@ -188,15 +188,19 @@ h5 {
 .user {
     padding: 7px 15px;
     border-radius: 4px;
-    color: white;
+    border-style: solid;
+    border-width: 2px;
+    color: black;
     font-size: 13px;
     font-weight: bold;
     background: #ffffff;
     margin: 10px 0;
 }
 .guest {
-    background: ##ffa500;
-    color: white;
+    background: #ffa500;
+    color: black;
+    border-style: solid;
+    border-width: 2px;
 }
 
 
