@@ -72,8 +72,8 @@ body
 {
   position: absolute;
   margin: 0 auto;
-  top: 50%;
-  left: Calc(50% - 20vw);
+  top: 33%;
+  left: Calc(50% - 15vw);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
@@ -81,24 +81,32 @@ body
 .LandingPage h1
 {
   text-align: center;
-  font-size: 5vw;
+  font-size: 4vw;
 
   padding-bottom: 20px;
 }
 
+.LandingPage h2
+{
+  text-align: center;
+  font-size: 2.5vw;
+
+  padding-bottom: 30px;
+}
+
 .LandingPage button
 {
-  margin: 0 auto;
+  align-items: center;
 
   text-align: center;
   vertical-align: middle;
 
-  width: 40vw;
-  height: Calc(5vw + 50px);
+  width: 30vw;
+  height: Calc(5vw + 40px);
 
   background-color: #F76902;
   color: black;
-  font-size: 4vw;
+  font-size: 3vw;
 
   border-radius: 1000px;
   border: 3px solid black;
