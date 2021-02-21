@@ -34,7 +34,7 @@ class HeaderBar extends Component
 
           <li onClick={() =>
           {
-            this.props.main.changePage( (<ChatRoom />) );
+            this.props.main.changePage( (<ChatRoom name={'test'} />) );
           }}>
             Chat
           </li>
