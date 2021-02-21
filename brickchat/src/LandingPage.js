@@ -1,4 +1,5 @@
 import './App.css';
+import './fonts.css';
 import React, { Component } from 'react';
 
 import 'materialize-css';
@@ -17,7 +18,7 @@ class LandingPage extends Component
   {
     return (
       <div className="LandingPage">
-        <h1>RIT Chatrooms</h1>
+        <h1>RIT Brick Chat</h1>
         
         <button onClick={() =>
           {
