@@ -99,12 +99,27 @@ app.post('/makeroom', (req, res, next) =>
     if(!valid)
       return;
 
+    if(req.body.name.length > 26)
+    {
+      res.status(400).type('json').send('{ "error": "Room name must have fewer than 27 characters!" }');
+      return;
+    }
+
     let tags = [];
 
     req.body.tags.forEach(tag =>
       {
+        if(tag.length > 26)
+        {
+          res.status(400).type('json').send('{ "error": "Tag name must have fewer than 27 characters!" }');
+          valid = false
+          return;
+        }
         tags.push(new Tag(tag));
       });
+
+    if(!valid)
+      return;
 
     rooms.push(new ChatRoom(tags, req.body.name));
     res.status(200).type('json').send('{ "success": "Room successfully created!" }');

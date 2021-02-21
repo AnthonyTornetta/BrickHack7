@@ -110,8 +110,9 @@ class SearchRoom extends Component
     return (
       <div className="SearchRoom">
         <div id="searchBar">
-          <div>
-            <input name="search" placeholder="Search for a room/tag..." onChange={(event) =>
+          <div style={{textAlign: 'center', marginBottom: 20}}>
+            <h1 style={{marginBottom: 20, fontSize: "3.5em"}}>Search Your Interests</h1>
+            <input name="search" placeholder="Search for tag..." onChange={(event) =>
             {
               let showTags = [];
               let val = event.target.value.toLowerCase().trim();
@@ -125,8 +126,9 @@ class SearchRoom extends Component
 
               this.setState({tags: showTags, selectedTags: this.state.selectedTags, groups: this.state.groups});
             }}></input>
-            <button>Search</button>
+            <button style={{height: 54, marginLeft: 6}}>Search</button>
           </div>
+        </div>
           <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
             <div className="Left">
               <h2>Tags</h2>
@@ -144,7 +146,7 @@ class SearchRoom extends Component
                     }}>Create Tag</button>
                 }
               </ul>
-              <h2>Added</h2>
+              <h2 style={{marginTop: 40}}>Search For...</h2>
               <ul className="TagList">
                 {
                   this.state.selectedTags.map(tag => (<li onClick={() =>
@@ -167,7 +169,6 @@ class SearchRoom extends Component
                 }
               </ul>
             </div>
-          </div>
         </div>
       </div>
     );

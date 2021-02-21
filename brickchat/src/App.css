@@ -154,10 +154,16 @@ body
   border: 3px solid black;
 }
 
+button
+{
+  cursor: pointer;
+}
+
 .LandingPage button:hover
 {
   transition-duration: 0.3s;
   background-color: #7C878E;
+  cursor: pointer;
 }
 
 .LandingPage button:active
@@ -189,14 +195,16 @@ body
 
   width: 20vw;
   height: 50px;
+  border: none;
 }
 .SearchRoom button
 {
-  background: #F76902;
+  background-color: #F76902;
   color: black;
   height: 50px;
   width: 5vw;
   text-align: center;
+  border: none;
 }
 .SearchRoom button:hover
 {
@@ -206,6 +214,29 @@ body
 .SearchRoom button:active
 {
   background-color: #A2AAAD;
+}
+
+.Tag
+{
+  transition: background-color 0.3s;
+}
+
+.Group
+{
+  font-size: 1.2em;
+  background-color: #d0d3d44d;
+
+  transition: background-color 0.3s;
+}
+
+.Group:hover
+{
+  background-color: #F76902;
+}
+
+.Tag:hover
+{
+  background-color: #F76902;
 }
 
 /*======================================================*/

@@ -88,6 +88,12 @@ class Canvas extends Component {
         this.line = [];
       }
 
+      clear()
+      {
+        this.ctx.fillColor = '#000000';
+        this.ctx.fillRect(0, 0, 10000, 10000);
+      }
+
       componentDidMount() {
         // Here we set up the properties of the canvas element.
         this.canvas.width = 1000;
@@ -117,15 +123,21 @@ class Canvas extends Component {
 
       render() {
         return (
-          <canvas
-          // We use the ref attribute to get direct access to the canvas element.
-            ref={(ref) => (this.canvas = ref)}
-            style={{ background: 'black' }}
-            onMouseDown={this.onMouseDown}
-            onMouseLeave={this.endPaintEvent}
-            onMouseUp={this.endPaintEvent}
-            onMouseMove={this.onMouseMove}
-          />
+          <div style={{display: 'flex', flexDirection: 'row'}}>
+            <button style={{border: 'none', backgroundColor: '#F76902', marginRight: 10, paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, height: 48}} onClick={() =>
+                {
+                  this.clear();
+                }}>Clear</button>
+            <canvas
+            // We use the ref attribute to get direct access to the canvas element.
+              ref={(ref) => (this.canvas = ref)}
+              style={{ background: 'black' }}
+              onMouseDown={this.onMouseDown}
+              onMouseLeave={this.endPaintEvent}
+              onMouseUp={this.endPaintEvent}
+              onMouseMove={this.onMouseMove}
+            />
+          </div>
         );
       }
     }
