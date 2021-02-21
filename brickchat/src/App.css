@@ -102,7 +102,8 @@ body
 
 body {
 	font-family: 'Roboto Condensed', serif;
-  
+  background-size: 100px;
+  background-repeat: repeat-y;
 }
 .main {
     display: flex;
