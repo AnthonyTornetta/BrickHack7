@@ -32,6 +32,44 @@ class ChatRoom extends Component
         consumerSecret={settings.consumerSecret}
         conferenceAlias={settings.conferenceAlias}
       />);
+
+    this.componentCleanup = this.componentCleanup.bind(this);
+    window.addEventListener('beforeunload', this.componentCleanup);
+  }
+
+  componentDidMount()
+  {
+    console.log('a');
+
+    fetch('http://127.0.0.1:8080/join', 
+    {
+      method: 'POST',
+      body: `{ "name": "${this.props.name}" }`,
+      headers:
+      {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+
+  componentCleanup()
+  {
+    console.log('a2');
+    fetch('http://127.0.0.1:8080/leave', 
+    {
+      method: 'POST',
+      body: `{ "name": "${this.props.name}" }`,
+      headers:
+      {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+
+  componentWillUnmount()
+  {
+    this.componentCleanup();
+    window.removeEventListener('beforeunload', this.componentCleanup); // remove the event handler for normal unmounting
   }
 
   render()
@@ -43,23 +81,18 @@ class ChatRoom extends Component
         </VoxeetProvider>
 
         <Fragment>
-                <h3 style={{ textAlign: 'center' }}></h3>
-                <div className="main">
-                  <div className="color-guide">
-                    <h5>Color Guide</h5>
-                    <div className="user user">You</div>
-                    <div className="user guest">Others</div>
-                  </div>
-                  <Canvas chatname={this.props.name} />
-                </div>
+          <h1 style={{ textAlign: 'center' }}>{this.props.name}</h1>
+          <div className="main">
+            <div className="color-guide">
+              <h5>Color Guide</h5>
+              <div className="user user">You</div>
+              <div className="user guest">Others</div>
+            </div>
+            <Canvas chatname={this.props.name} />
+          </div>
           </Fragment>
       </div>
     );
-  }
-
-  componentWillUnmount()
-  {
-    //document.getElementById('leave-btn').click();
   }
 }
 

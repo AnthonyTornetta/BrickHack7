@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import HeaderBar from './HeaderBar';
 import LandingPage from './LandingPage';

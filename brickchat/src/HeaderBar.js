@@ -27,21 +27,14 @@ class HeaderBar extends Component
 
           <li onClick={() =>
           {
-            this.props.main.changePage( (<SearchPage />) );
+            this.props.main.changePage( (<SearchPage main={this.props.main} />) );
           }}>
-            Search
+            Chat Rooms
           </li>
 
           <li onClick={() =>
           {
-            this.props.main.changePage( (<ChatRoom name={'test'} />) );
-          }}>
-            Chat
-          </li>
-
-          <li onClick={() =>
-          {
-            this.props.main.changePage( (<AboutPage />) );
+            this.props.main.changePage( (<AboutPage main={this.props.main} />) );
           }}>
             About
           </li>

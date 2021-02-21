@@ -39,6 +39,50 @@ body
 }
 
 /*======================================================*/
+.Left
+{
+  flex: 1;
+  justify-self: flex-start;
+}
+
+.Right
+{
+  flex: 1;
+  justify-self: flex-end;
+}
+
+.TagList
+{
+  list-style-type: none;
+}
+
+.TagList .Tag
+{
+  display: inline-block;
+  padding: 8px 6px;
+  outline: orange  thin solid;
+
+  margin: 4px;
+
+  text-align: center;
+  min-width: 70px;
+  cursor: pointer;
+}
+
+.GroupList
+{
+  list-style-type: none;
+}
+
+.GroupList .Group
+{
+  display: block;
+  padding: 16px 12px;
+  margin-bottom: 4px;
+
+  cursor: pointer;
+}
+
 .HeaderBar ul
 {
   list-style-type: none;
@@ -188,14 +232,15 @@ h5 {
 .user {
     padding: 7px 15px;
     border-radius: 4px;
-    color: white;
+    color: black;
     font-size: 13px;
     font-weight: bold;
     background: #ffffff;
     margin: 10px 0;
+    outline: black solid thin;
 }
 .guest {
-    background: ##ffa500;
+    background: #ffa500;
     color: white;
 }
 
