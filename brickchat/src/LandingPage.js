@@ -22,7 +22,7 @@ class LandingPage extends Component
         <h2>Roar With Your Tigers!</h2>
         <button onClick={() =>
           {
-            this.props.main.changePage( (<SearchPage />) );
+            this.props.main.changePage( (<SearchPage main={this.props.main} />) );
           }}>
             Search Chatrooms
         </button>
