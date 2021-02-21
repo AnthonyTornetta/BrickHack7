@@ -5,25 +5,27 @@
 	import Pusher from 'pusher-js';
 
 
-    class Canvas extends Component {
-      constructor(props) {
+class Canvas extends Component {
+  constructor(props) {
         super(props);
         this.onMouseDown = this.onMouseDown.bind(this);
         this.onMouseMove = this.onMouseMove.bind(this);
         this.endPaintEvent = this.endPaintEvent.bind(this);
-		this.pusher = new Pusher('9db5aa5f56be39d0fdde', {
+		    this.pusher = new Pusher('9db5aa5f56be39d0fdde', {
           cluster: 'us2',
         });
+
+        this.isPainting = false;
+        // Different stroke styles to be used for user and guest
+        this.userStrokeStyle = '#EE92C2';
+        this.guestStrokeStyle = '#F0C987';
+        this.line = [];
+        // v4 creates a unique id for each user. We used this since there's no auth to tell users apart
+        this.userId = `${v4()}-${props.chatname}`;
+        this.prevPos = { offsetX: 0, offsetY: 0 };
       }
 
-      isPainting = false;
-      // Different stroke styles to be used for user and guest
-      userStrokeStyle = '#EE92C2';
-      guestStrokeStyle = '#F0C987';
-      line = [];
-      // v4 creates a unique id for each user. We used this since there's no auth to tell users apart
-      userId = v4();
-      prevPos = { offsetX: 0, offsetY: 0 };
+      
 
       onMouseDown({ nativeEvent }) {
         const { offsetX, offsetY } = nativeEvent;
@@ -98,10 +100,15 @@
 
           const { userId, line } = data;
 
-          if (userId !== this.userId) {
-            line.forEach((position) => {
-              this.paint(position.start, position.stop, this.guestStrokeStyle);
-            });
+          if (userId !== this.userId)
+          {
+            let id = userId.substr(userId.lastIndexOf('-') + 1);
+            if(id === this.props.chatname)
+            {
+              line.forEach((position) => {
+                this.paint(position.start, position.stop, this.guestStrokeStyle);
+              });
+            }
           }
         });
       }

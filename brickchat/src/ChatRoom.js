@@ -48,7 +48,7 @@ class ChatRoom extends Component
                     <div className="user user">You</div>
                     <div className="user guest">Others</div>
                   </div>
-                  <Canvas />
+                  <Canvas chatname={this.props.name} />
                 </div>
           </Fragment>
       </div>
